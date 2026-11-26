@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Büşahmer - teknoloji, bilgi, yaşam ve kişisel gelişim üzerine içerikler.">
+  <title>Büşahmer | Keşfet. Öğren. Geliş.</title>
+  <style>
+    :root{--navy:#142c3a;--blue:#294554;--cream:#f5f3ed;--ink:#182b35;--muted:#64747b;--gold:#d6ad68;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+    a{color:inherit;text-decoration:none}.container{width:min(1100px,92%);margin:auto}
+    header{background:var(--navy);color:white;position:sticky;top:0;z-index:5;box-shadow:0 4px 18px #10273322}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
+    .logo{font-weight:900;letter-spacing:2px;font-size:1.5rem}.logo span{color:var(--gold)}
+    nav{display:flex;gap:22px;font-size:.95rem}nav a{opacity:.9}nav a:hover{color:var(--gold)}
+    .hero{background:linear-gradient(120deg,#142c3a 0%,#294554 65%,#45616a 100%);color:white;padding:78px 0 86px;overflow:hidden}
+    .hero-inner{max-width:760px}.eyebrow{text-transform:uppercase;letter-spacing:3px;color:#e4c58f;font-size:.78rem;font-weight:bold}
+    h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.08;margin:15px 0 20px;letter-spacing:-2px}
+    .hero p{font-size:1.15rem;color:#d8e1e3;max-width:620px;margin-bottom:28px}
+    .btn{display:inline-block;background:var(--gold);color:#182b35;padding:12px 22px;border-radius:7px;font-weight:bold}
+    .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    section{padding:58px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}
+    h2{font-size:2rem;margin:0;color:var(--navy)}.section-head p{margin:5px 0 0;color:var(--muted)}
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .category{background:white;padding:22px;border-radius:12px;border:1px solid #e8e5dc;transition:.2s}
+    .category:hover{transform:translateY(-4px);box-shadow:0 12px 24px #142c3a12}
+    .category .symbol{font-size:1.7rem}.category h3{margin:9px 0 3px;color:var(--navy)}.category p{margin:0;color:var(--muted);font-size:.9rem}
+    .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+    input,select{font:inherit;padding:12px 14px;border:1px solid #d9dedb;border-radius:8px;background:white;color:var(--ink)}
+    input{flex:1;min-width:220px}select{min-width:180px}
+    .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .post{background:white;border:1px solid #e8e5dc;border-radius:13px;overflow:hidden;display:flex;flex-direction:column}
+    .post-art{height:150px;background:linear-gradient(135deg,#dce6e1,#a9c0ba);display:grid;place-items:center;font-size:3rem}
+    .post:nth-child(3n+2) .post-art{background:linear-gradient(135deg,#e9dfce,#cbb58e)}
+    .post:nth-child(3n) .post-art{background:linear-gradient(135deg,#d8e0e9,#9eafc1)}
+    .post-content{padding:20px;display:flex;flex-direction:column;flex:1}
+    .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:#9b7335;font-weight:bold}
+    .post h3{margin:8px 0;color:var(--navy);font-size:1.2rem;line-height:1.3}
+    .post p{color:var(--muted);font-size:.93rem;margin:0 0 18px}
+    .read{margin-top:auto;font-weight:bold;color:#31586a}
+    .about{background:#e9eee9}.about-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+    .about-card{background:var(--navy);color:white;padding:28px;border-radius:14px}.about-card strong{font-size:1.2rem;color:var(--gold)}
+    footer{background:var(--navy);color:#d8e1e3;padding:30px 0;font-size:.9rem}
+    footer .foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .empty{grid-column:1/-1;background:white;padding:25px;border-radius:10px;color:var(--muted);text-align:center}
+    @media(max-width:760px){nav{gap:12px;font-size:.85rem}.categories{grid-template-columns:repeat(2,1fr)}.posts{grid-template-columns:1fr 1fr}.about-inner{grid-template-columns:1fr}}
+    @media(max-width:520px){.nav{align-items:flex-start;flex-direction:column}.hero{padding:55px 0}.posts{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">BÜŞAH<span>MER</span></a>
+    <nav aria-label="Ana menü">
+      <a href="#anasayfa">Ana Sayfa</a><a href="#kategoriler">Kategoriler</a><a href="#yazilar">Yazılar</a><a href="#hakkimizda">Hakkımızda</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="anasayfa">
+    <div class="container hero-inner">
+      <div class="eyebrow">Bilginin yeni adresi</div>
+      <h1>Merak ettiğin her şey,<br>tek bir yerde.</h1>
+      <p>Teknoloji, günlük yaşam, faydalı bilgiler ve kişisel gelişim üzerine sade, anlaşılır ve ilham veren içerikler.</p>
+      <a class="btn" href="#yazilar">Yazıları keşfet</a>
+    </div>
+  </section>
+  <section id="kategoriler">
+    <div class="container">
+      <div class="section-head"><div><h2>Keşfetmeye başla</h2><p>İlgini çeken bir kategori seç.</p></div></div>
+      <div class="categories">
+        <a class="category" href="#yazilar" data-category="Teknoloji"><div class="symbol">💻</div><h3>Teknoloji</h3><p>Dijital dünya ve yenilikler</p></a>
+        <a class="category" href="#yazilar" data-category="Bilgi"><div class="symbol">💡</div><h3>Bilgi</h3><p>Merak edilen konular ve pratik bilgiler</p></a>
+        <a class="category" href="#yazilar" data-category="Yaşam"><div class="symbol">🌿</div><h3>Yaşam</h3><p>Günlük hayata dair fikirler</p></a>
+        <a class="category" href="#yazilar" data-category="Gelişim"><div class="symbol">📈</div><h3>Gelişim</h3><p>Öğrenme ve kendini geliştirme</p></a>
+      </div>
+    </div>
+  </section>
+  <section id="yazilar">
+    <div class="container">
+      <div class="section-head"><div><h2>Son yazılar</h2><p>Büşahmer'deki örnek içerikler.</p></div></div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Yazılarda ara..." aria-label="Yazılarda ara">
+        <select id="filter" aria-label="Kategori seç"><option value="Tümü">Tüm kategoriler</option><option>Teknoloji</option><option>Bilgi</option><option>Yaşam</option><option>Gelişim</option></select>
+      </div>
+      <div class="posts" id="posts">
+        <article class="post" data-category="Teknoloji" data-title="Yapay zekâ nedir? Günlük hayatta nasıl kullanılır?">
+          <div class="post-art">🤖</div><div class="post-content"><span class="tag">Teknoloji</span><h3>Yapay zekâ nedir? Günlük hayatta nasıl kullanılır?</h3><p>Yapay zekânın temel mantığını ve günlük yaşamda işimize yarayabileceği alanları keşfedelim.</p><a class="read" href="mailto:merhaba@busahmer.example?subject=B%C3%BC%C5%9Fahmer%20yaz%C4%B1s%C4%B1">Yazı hakkında bilgi →</a></div>
+        </article>
+        <article class="post" data-category="Bilgi" data-title="İnternette güvenli kalmak için 5 basit alışkanlık">
+          <div class="post-art">🔐</div><div class="post-content"><span class="tag">Bilgi</span><h3>İnternette güvenli kalmak için 5 basit alışkanlık</h3><p>Güçlü şifrelerden bağlantı kontrolüne kadar çevrim içi güvenliğin temel adımları.</p><a class="read" href="mailto:merhaba@busahmer.example?subject=B%C3%BC%C5%9Fahmer%20yaz%C4%B1s%C4%B1">Yazı hakkında bilgi →</a></div>
+        </article>
+        <article class="post" data-category="Yaşam" data-title="Güne daha verimli başlamak için küçük öneriler">
+          <div class="post-art">☀️</div><div class="post-content"><span class="tag">Yaşam</span><h3>Güne daha verimli başlamak için küçük öneriler</h3><p>Büyük değişiklikler yapmadan sabah rutinini daha düzenli hâle getirmenin yolları.</p><a class="read" href="mailto:merhaba@busahmer.example?subject=B%C3%BC%C5%9Fahmer%20yaz%C4%B1s%C4%B1">Yazı hakkında bilgi →</a></div>
+        </article>
+        <article class="post" data-category="Gelişim" data-title="Yeni bir beceri öğrenmeye nereden başlamalı?">
+          <div class="post-art">🧠</div><div class="post-content"><span class="tag">Gelişim</span><h3>Yeni bir beceri öğrenmeye nereden başlamalı?</h3><p>Hedef belirleme, küçük adımlar ve düzenli tekrar ile öğrenmeyi kolaylaştırın.</p><a class="read" href="mailto:merhaba@busahmer.example?subject=B%C3%BC%C5%9Fahmer%20yaz%C4%B1s%C4%B1">Yazı hakkında bilgi →</a></div>
+        </article>
+        <article class="post" data-category="Teknoloji" data-title="Ücretsiz dijital araçlarla neler yapılabilir?">
+          <div class="post-art">🛠️</div><div class="post-content"><span class="tag">Teknoloji</span><h3>Ücretsiz dijital araçlarla neler yapılabilir?</h3><p>Üretkenliği artırmak, not tutmak ve yeni fikirler geliştirmek için araçları tanıyalım.</p><a class="read" href="mailto:merhaba@busahmer.example?subject=B%C3%BC%C5%9Fahmer%20yaz%C4%B1s%C4%B1">Yazı hakkında bilgi →</a></div>
+        </article>
+        <article class="post" data-category="Bilgi" data-title="Bir bilgiyi doğru kaynaktan nasıl kontrol ederiz?">
+          <div class="post-art">📚</div><div class="post-content"><span class="tag">Bilgi</span><h3>Bir bilgiyi doğru kaynaktan nasıl kontrol ederiz?</h3><p>İnternette karşılaştığımız bilgilerin güvenilirliğini değerlendirmek için basit yöntemler.</p><a class="read" href="mailto:merhaba@busahmer.example?subject=B%C3%BC%C5%9Fahmer%20yaz%C4%B1s%C4%B1">Yazı hakkında bilgi →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="hakkimizda">
+    <div class="container about-inner">
+      <div><h2>Büşahmer hakkında</h2><p>Büşahmer; merak eden, araştıran ve öğrendiklerini paylaşmak isteyen herkes için hazırlanmış bir içerik platformudur. Amacımız karmaşık konuları anlaşılır hâle getirmek ve faydalı bilgileri tek yerde buluşturmak.</p></div>
+      <div class="about-card"><strong>Keşfet. Öğren. Geliş.</strong><p>Bu site bir başlangıç projesidir. Zamanla kendi yazıların, görsellerin ve yeni kategorilerinle büyütebilirsin.</p></div>
+    </div>
+  </section>
+</main>
+<footer><div class="container foot"><span>© <span id="year"></span> Büşahmer. Tüm hakları saklıdır.</span><span>Merakla başlar, bilgiyle büyür.</span></div></footer>
+<script>
+  const search = document.getElementById('search');
+  const filter = document.getElementById('filter');
+  const cards = [...document.querySelectorAll('.post')];
+  function updatePosts(){
+    const q = search.value.toLocaleLowerCase('tr').trim();
+    const category = filter.value;
+    let visible = 0;
+    cards.forEach(card => {
+      const matchesText = card.dataset.title.toLocaleLowerCase('tr').includes(q);
+      const matchesCategory = category === 'Tümü' || card.dataset.category === category;
+      card.hidden = !(matchesText && matchesCategory);
+      if (!card.hidden) visible++;
+    });
+    let empty = document.getElementById('empty');
+    if (!visible && !empty) {
+      empty = document.createElement('div'); empty.id='empty'; empty.className='empty';
+      empty.textContent='Aramana uygun yazı bulunamadı.';
+      document.getElementById('posts').appendChild(empty);
+    } else if (visible && empty) empty.remove();
+  }
+  search.addEventListener('input', updatePosts);
+  filter.addEventListener('change', updatePosts);
+  document.querySelectorAll('.category').forEach(link => link.addEventListener('click', () => {
+    filter.value = link.dataset.category; updatePosts();
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
